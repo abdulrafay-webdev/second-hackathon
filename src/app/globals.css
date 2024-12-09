@@ -79,6 +79,11 @@ body {
   background-size: 100%;
 }
 
+.ad3{
+  background-size: 100%;
+  background-image: url("../components/images/BackDesign.png");
+}
+
 @layer base {
   * {
     @apply border-border;

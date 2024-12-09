@@ -16,21 +16,21 @@ async function Data() {
   return Product;
 }
 
-async function Swipe() {
+async function SwipeReverse() {
 
   const productData = await Data()
 
   return (
     <div className='sm:p-10 lg:px-16 px-6 my-4'>
       <div className='text-base flex flex-row justify-between pb-3 '>
-      <p className='text-gray-950 opacity-60 font-semibold'>Popular Car</p>
+      <p className='text-gray-950 opacity-60 font-semibold'>Recent Car</p>
       <Link href={"/Products"}>
       <p className='text-blue-600 font-semibold'>View All</p>
       </Link>
       </div>
       <div>
       
-      <div className='flex flex-row'>
+      <div className='flex flex-row-reverse'>
       <div className="carousel carousel-center rounded-box ">
       <div className="carousel-item gap-4 md:gap-8">
       {productData.map((item: any, i: number) => {
@@ -49,4 +49,4 @@ async function Swipe() {
   )
 }
 
-export default Swipe
+export default SwipeReverse

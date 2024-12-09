@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaGasPump, FaCogs, FaUser } from "react-icons/fa";
 import Button from "./Button";
+import Link from "next/link";
 
 const CarCard = (props:any) => {
   return (
@@ -24,6 +25,7 @@ const CarCard = (props:any) => {
       </div>
 
       {/* Image */}
+      <Link href={`/Products/${props.id}`}>
       <div className="flex justify-center w-full my-4">
         <Image
           src={props.imgURL}
@@ -34,6 +36,7 @@ const CarCard = (props:any) => {
           className="w-full scale-105 mb-7 h-full object-contain"
         />
       </div>
+      </Link>
 
       {/* Features */}
       <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
@@ -54,7 +57,7 @@ const CarCard = (props:any) => {
       {/* Price and Button */}
       <div className="flex justify-between items-center">
         <p className="md:text-lg text-base font-bold text-gray-800">${props.price}.00/day</p>
-        <Button>Rent Now</Button>
+       <Link href={'/checkout'}><Button>Rent Now</Button></Link>
       </div>
     </div>
 

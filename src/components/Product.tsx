@@ -29,7 +29,7 @@ async function Products() {
       {productData.map((item: any, i: number) => {
         return (
           <div key={i} className='flex flex-row'>
-            <ProductCard name={item.name} liter={item.Liter} price={item.Price} imgURL={item.ProductImageURL} />
+            <ProductCard name={item.name} liter={item.Liter} price={item.Price} imgURL={item.ProductImageURL} id={item._id} />
           </div>
         )
       })}

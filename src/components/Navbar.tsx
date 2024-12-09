@@ -3,16 +3,17 @@ import SearchBar from './subcomponents/SearchBox'
 import MobileSearch from './subcomponents/MobileSearch'
 import Image from 'next/image'
 import profile from './images/profile.png'
+import Link from 'next/link'
 
 export const Navbar = () => {
   return (
-    <div className=" bg-white  flex flex-col w-full h-72 gap-5 sm:h-32 sm:px-9 px-2 items-center">
+    <div className=" bg-white  flex flex-col w-full gap-5 h-36 sm:px-9 px-2 items-center">
       <div className='navbar sm:py-10 flex justify-between w-full'>
         {/* logo  */}
         <div className="flex-1">
-          <a className="btn btn-ghost md:text-4xl text-2xl text-blue-600">MORENT</a>
+          <Link href={'/'} className="btn btn-ghost md:text-4xl text-2xl text-blue-600">MORENT</Link>
           {/* search  */}
-          <div className='hidden sm:block xl:ml-16 lg:ml-11 md:ml-8 sm:ml-4 '>
+          <div className='hidden sm:block xl:ml-16 lg:ml-11 md:ml-8 sm:ml-4'>
             <SearchBar />
           </div>
         </div>
@@ -56,7 +57,7 @@ export const Navbar = () => {
                   <span className="badge">New</span>
                 </a>
               </li>
-              <li><a>Settings</a></li>
+              <li><Link href={'/dashboard'}>Dashboard</Link></li>
               <li><a>Logout</a></li>
             </ul>
           </div>
