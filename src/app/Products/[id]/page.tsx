@@ -7,15 +7,17 @@ import Swipe from "@/components/subcomponents/Swipe";
 import SwipeReverse from "@/components/subcomponents/SwipeReverse";
 
 
-interface PageProps {
-  params: {
+export interface PageProps {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function Product({ params }: PageProps) {
 
-  const id = params.id;
+  // const id = params.id;
+  const resolvedParams = await params; // Await the promise
+  const { id } = resolvedParams;
 
   async function Data() {
     const Product = await client.fetch(`*[_id == "${id}"] {
